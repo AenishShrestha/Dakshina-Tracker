@@ -18,6 +18,7 @@ CSRF_TRUSTED_ORIGINS = ['https://so8gs4gko0k0gk80gsk8sck4.62.72.58.139.sslip.io'
 
 
 INSTALLED_APPS = [
+    'widget_tweaks',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
