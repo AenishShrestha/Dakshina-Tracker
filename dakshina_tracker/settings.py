@@ -14,6 +14,8 @@ SECRET_KEY = 'your-secret-key-here'  # Replace with a secure secret key
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']  # Add your domain when deploying
+CSRF_TRUSTED_ORIGINS = ['https://so8gs4gko0k0gk80gsk8sck4.62.72.58.139.sslip.io']
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
