@@ -16,6 +16,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']  # Add your domain when deploying
 
 INSTALLED_APPS = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -117,6 +118,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
 
 
 # Default primary key field type
