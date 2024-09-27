@@ -1,0 +1,26 @@
+{% extends "tracker/base.html" %}
+
+{% load socialaccount %}
+
+{% block content %}
+<div class="flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600">
+    <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-md transform hover:scale-105 transition-transform duration-300">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Welcome to Dakshina Tracker</h2>
+        
+        <p class="text-gray-600 text-center mb-8">Sign in to track your Dakshina and join the leaderboard!</p>
+        
+        <a href="{% provider_login_url 'google' %}" 
+           class="w-full flex justify-center items-center py-3 px-4 bg-white hover:bg-gray-100 text-gray-800 font-semibold rounded-lg shadow-md border border-gray-300 transition duration-300 ease-in-out transform hover:-translate-y-1">
+            <svg class="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+                <defs><path id="a" d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"/></defs>
+                <clipPath id="b"><use xlink:href="#a" overflow="visible"/></clipPath><path clip-path="url(#b)" fill="#FBBC05" d="M0 37V11l17 13z"/><path clip-path="url(#b)" fill="#EA4335" d="M0 11l17 13 7-6.1L48 14V0H0z"/><path clip-path="url(#b)" fill="#34A853" d="M0 37l30-23 7.9 1L48 0v48H0z"/><path clip-path="url(#b)" fill="#4285F4" d="M48 48L17 24l-4-3 35-10z"/>
+            </svg>
+            Sign In with Google
+        </a>
+        
+        <div class="mt-8 text-center">
+            <p class="text-sm text-gray-600">By signing in, you agree to our <a href="#" class="text-blue-500 hover:underline">Terms of Service</a> and <a href="#" class="text-blue-500 hover:underline">Privacy Policy</a>.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'tracker/base.html' %}
+
+{% block content %}
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Your Dakshinas</h2>
+        <a href="{% url 'add_dakshina' %}" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded mb-4 inline-block">Add Dakshina</a>
+        <div class="bg-white shadow-md rounded p-4">
+            {% for dakshina in user_dakshinas %}
+            <div class="mb-4 p-4 border-b">
+                <p class="font-bold">₹{{ dakshina.amount }} on {{ dakshina.date }}</p>
+                <p>{{ dakshina.description }}</p>
+                <div class="mt-2">
+                    <a href="{% url 'edit_dakshina' dakshina.pk %}" class="text-blue-500 hover:text-blue-600 mr-2">Edit</a>
+                    <a href="{% url 'delete_dakshina' dakshina.pk %}" class="text-red-500 hover:text-red-600">Delete</a>
+                </div>
+            </div>
+            {% empty %}
+            <p>No dakshinas recorded yet.</p>
+            {% endfor %}
+        </div>
+    </div>
+    <div>
+        <h2 class="text-2xl font-bold mb-4">Today's Leaderboard</h2>
+        <div class="bg-white shadow-md rounded p-4">
+            {% for dakshina in leaderboard %}
+            <div class="mb-4 p-4 border-b {% if dakshina.user == user %}bg-yellow-100{% endif %}">
+                <p class="font-bold">{{ forloop.counter }}. {{ dakshina.user.username }}</p>
+                <p>Rs : {{ dakshina.amount }}</p>
+                <p>{{ dakshina.description }}</p>
+            </div>
+            {% empty %}
+            <p>No dakshinas recorded for today.</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
