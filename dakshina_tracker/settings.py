@@ -84,7 +84,8 @@ SOCIALACCOUNT_PROVIDERS = {
         ],
         'AUTH_PARAMS': {
             'access_type': 'online',
-        }
+        },
+        'OAUTH_REDIRECT_URI': 'https://dashain.aenishshrestha.com/accounts/google/login/callback/'
     }
 }
 
